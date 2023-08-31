@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+        margin-top: 50px;
+      }
+      button {
+        margin-right: 30px;
+        font-size: 16px;
+      }
+      button.active {
+        background-color: #007bff;
+        color: #fff;
+      }
+    </style>
+    <script>
+      function changeImageToAngular() {
+        var imageRef = document.getElementById("image");
+        imageRef.src = "https://wallpapercave.com/wp/wp5722050.png";
+        highlightButton("angularButton");
+      }
+      function changeImageToReact() {
+        var imageRef = document.getElementById("image");
+        imageRef.src = "http://jpie.nz/assets/images/2020/10/react-logo.png";
+        highlightButton("reactButton");
+      }
+
+      function highlightButton(buttonId) {
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.classList.remove("active");
+          button.disabled = false; // Enable all buttons
+        });
+        const selectedButton = document.getElementById(buttonId);
+        selectedButton.classList.add("active");
+        const otherButtonId =
+          buttonId === "reactButton" ? "angularButton" : "reactButton";
+        const otherButton = document.getElementById(otherButtonId);
+        otherButton.disabled = true; // Disable the other button
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <img
+        id="image"
+        src="http://jpie.nz/assets/images/2020/10/react-logo.png"
+        width="300"
+        height="300"
+      />
+      <button id="reactButton" onclick="changeImageToReact()" class="active">
+        React
+      </button>
+      <button id="angularButton" onclick="changeImageToAngular()">
+        Angular
+      </button>
+    </div>
+  </body>
+</html>
