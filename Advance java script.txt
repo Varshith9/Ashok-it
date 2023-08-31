@@ -1,0 +1,15 @@
+Advance java script
+
+Dom  :It is a structure of html elements which are converted into objects(nodes)and arranged all the objects in tree data structure.
+
+
+browser engine will read the html code in bytes.
+
+bytes---characters --- tokens---- objects(nodes)
+
+html elements ---- objects(nodes)
+                          |
+                          |
+                (It will link all the nodes in the sequence and all the nodes will be placed in the tree data structure and the tree data structure we are going to call as a dom.
+
+ 
